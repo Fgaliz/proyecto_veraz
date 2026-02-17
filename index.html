@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Validation System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Document Validation System</h1>
+            <p class="subtitle">Verify your document number against our secure database</p>
+        </header>
+        
+        <div class="content">
+            <div class="input-section">
+                <div class="input-group">
+                    <label for="documentNumber">
+                        <i class="fas fa-id-card"></i> Document Number
+                    </label>
+                    <div class="input-with-button">
+                        <input 
+                            type="number" 
+                            
+                            id="documentNumber" 
+                            placeholder="Enter your cuit/cuil number, no dashes nor characters (e.g., 20123456783)"
+                            autocomplete="off"
+                        >
+                        <button id="validateBtn">
+                            <i class="fas fa-search"></i> Validate Document
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="api-info">
+                    <i class="fas fa-info-circle"></i> 
+                    This system will validate your document by making a secure API call to our validation endpoint.
+                </div>
+            </div>
+            
+            <div class="result-section">
+                <div class="result-title">
+                    <i class="fas fa-file-alt"></i> Validation Results
+                </div>
+                
+                <div id="statusMessage" class="status-message" style="display: none;"></div>
+                
+                <div class="loading" id="loadingIndicator">
+                    <div class="spinner"></div>
+                    <p>Validating document number, please wait...</p>
+                </div>
+                
+                <div class="result-content" id="resultContent">
+                    <p style="color: #777; text-align: center; margin-top: 40px;">
+                        Enter a document number and click "Validate Document" to see the results here.
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Document Validation System &copy; 2026 | FG</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
